@@ -1,17 +1,25 @@
-# minimal-reproduction-template
-
-First, read the [Renovate minimal reproduction instructions](https://github.com/renovatebot/renovate/blob/main/docs/development/minimal-reproductions.md).
-
-Then replace the current `h1` with the Renovate Issue/Discussion number.
+# 33902
 
 ## Current behavior
 
-Explain the current behavior here.
+Renovate cannot find the `requirements.in` file.  Notice the extra `requirements/` in the path.
+
+```log
+DEBUG: pip-compile: No content for source file requirements/requirements/requirements.in (repository=local)
+```
 
 ## Expected behavior
 
-Explain the expected behavior here.
+Renovate should find the requirements file.
+
+## Running locally with Docker
+
+Fill the value for `GITHUB_COM_TOKEN`!
+
+```bash
+docker run -it --rm -e LOG_LEVEL=debug -e GITHUB_COM_TOKEN="..." -e RENOVATE_CONFIG_FILE=renovate.json -v "$(pwd):/usr/src/app" renovate/renovate:39.137
+```
 
 ## Link to the Renovate issue or Discussion
 
-Put your link to the Renovate issue or Discussion here.
+https://github.com/renovatebot/renovate/discussions/33902
