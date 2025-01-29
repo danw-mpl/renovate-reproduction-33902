@@ -1,1 +1,20 @@
-{}
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "platform": "local",
+  "autodiscover": false,
+  "prCreation": "immediate",
+  "dependencyDashboard": false,
+  "enabledManagers": ["pip-compile"],
+  "force": {
+    "schedule": "at any time"
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "pip-compile": {
+    "fileMatch": ["(^|/).*requirements.*\\.txt$"]
+  },
+  "pip_requirements": { "enabled": false },
+  "pip_setup": { "enabled": false }
+}
